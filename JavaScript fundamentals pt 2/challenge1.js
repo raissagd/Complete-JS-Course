@@ -30,23 +30,22 @@ GOOD LUCK 😀
 
 const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
-
 const dolphinsAvg1 = calcAverage(44, 23, 71);
 const dolphinsAvg2 = calcAverage(85, 54, 41);
 const koalasAvg1 = calcAverage(65, 54, 49);
 const koalasAvg2 = calcAverage(23, 34, 27);
 
 const checkWinner = function (avg1, avg2) {
-    if (avg1 >= (2 * avg2)) {
-        console.log(`Dolphins win (${avg1} vs. ${avg2})`);
-    } else if (avg2 >= (2 * avg1)) {
-        console.log(`Koalas win (${avg2} vs. ${avg1})`);
-    }
-    else {
-        console.log('No winners!');
-    }
-}
+  if (avg1 >= 2 * avg2) {
+    console.log(`Dolphins win (${avg1} vs. ${avg2})`);
+  } else if (avg2 >= 2 * avg1) {
+    console.log(`Koalas win (${avg2} vs. ${avg1})`);
+  } else {
+    console.log("No winners!");
+  }
+};
 
 checkWinner(dolphinsAvg1, koalasAvg1);
 checkWinner(dolphinsAvg2, koalasAvg2);
 
+// TODO
