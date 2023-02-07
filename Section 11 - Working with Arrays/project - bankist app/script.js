@@ -139,8 +139,10 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
+/////////////////////////////////////////////////////
+
 let currentAccount;
-// event handler
+// event handlers
 btnLogin.addEventListener("click", function (e) {
   e.preventDefault(); // prevent the form from submitting
   currentAccount = accounts.find(
@@ -186,6 +188,47 @@ btnTransfer.addEventListener("click", function (e) {
     updateUI(currentAccount);
   }
 });
+
+btnLoan.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value);
+
+  if (
+    amount > 0 &&
+    currentAccount.movements.some((mov) => mov >= amount * 0.1)
+  ) {
+    // add movement
+    currentAccount.movements.push(amount);
+
+    // update UI
+    updateUI(currentAccount);
+  }
+  inputLoanAmount = "";
+});
+
+btnClose.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    const index = accounts.findIndex(
+      (acc) => acc.username === currentAccount.username
+    );
+
+    //Delete account
+    accounts.splice(index, 1);
+
+    // Hide UI
+    containerApp.style.opacity = 100;
+  }
+
+  inputCloseUsername.value = inputClosePin.value = "";
+});
+
+////////////////////////////////////////////////////
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const euroToUsd = 1.1;
