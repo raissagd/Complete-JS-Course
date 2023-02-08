@@ -1,8 +1,10 @@
 # JavaScipt course: answering the code challanges.
 
-This repo was made for uploading my answers to the code challanges given along the "The Complete JavaScript Course 2023: From Zero to Expert!" course by Jonas Schmedtmann, at Udemy.
+This repo was made for uploading my answers to the code challanges given along the "The Complete JavaScript Course 2023: From Zero to Expert!" course by Jonas Schmedtmann, on Udemy.<br>
+There are also some fun little projects that are totally worth checking out!
 
 ### Overview of all the sections I went through:
+
 - Section 1: Welcome
 - Section 2: JavaScript Fundamentals - part 1
 - Section 3: JavaScript Fundamentals - part 2
